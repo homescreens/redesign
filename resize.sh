@@ -4,7 +4,7 @@
 # Based off https://github.com/mavieth/image-resizer
 
 SIZE="500kb"
-SCALE="20%"
+SCALE="40%"
 
 for image in `ls -r *.{png,jpeg,jpg,JPG} -R 2>/dev/null`; do
 
@@ -19,7 +19,7 @@ for image in `ls -r *.{png,jpeg,jpg,JPG} -R 2>/dev/null`; do
 
 	# Display message
 	echo "<div class="item">"
-	echo "<a href=\"./full/$image\"><img src=\"./thumb/$image\" alt=\"FILLTHISIN\"></a>"
+	echo "<a href=\"./full/$image\"><img src=\"./thumb/$image\" alt=\"$image\"></a>"
 	echo "</div>"
 
 done
