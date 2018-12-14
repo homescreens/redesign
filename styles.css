@@ -40,6 +40,16 @@ h2 {
 #collapsingNavbar3 {
 	margin-left: 3%;
 }
+.content {
+	margin: 0% 5%;
+	max-width: 500px;
+}
+.content a {
+	color: #000000;
+}
+.content a:hover {
+	text-decoration: underline;
+}
 .navbar {
 	background-color: #dbeddf !important;
 	padding: 1% 5%;
