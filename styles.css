@@ -55,11 +55,19 @@ h2 {
 	padding: 1% 5%;
 }
 .navbar a {
-	color: #000000;
+	color: #ffffff;
 }
 .navbar a:hover {
 	text-decoration: underline;
 }
 .navbar-toggler-icon {
 	background-color: #000000;
+}
+::-moz-selection {
+	color: #ffffff;
+	background-color: #61a3e9;
+}
+::selection {
+	color: #ffffff;
+	background-color: #61a3e9;
 }
