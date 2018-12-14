@@ -1,15 +1,27 @@
 #!/bin/bash
-# Resizes images
-# Requires imagemagick
+# Resizes images and echoes appropriate HTML 
+# Requires ffmpeg, imagemagick
 # Based off https://github.com/mavieth/image-resizer
 
 SIZE="500kb"
 SCALE="40%"
 
-for image in `ls -r *.{png,jpeg,jpg,JPG} -R 2>/dev/null`; do
+for image in `ls -r *.{gif,jpeg,jpg,JPG,png,webm} -R 2>/dev/null`; do
+
+	# File extension
+	ending="${image##*.}"
 
 	# Save original copy in full directory
 	cp $image full/$image
+
+	# Create a screencap of gif or webm to use as thumbnail later
+	if [ $ending == "gif" ] || [ $ending == "webm" ];
+	then
+		screencap="${image%.*}.png"
+		ffmpeg -loglevel quiet -i $image -y $screencap
+		rm $image
+		image=$screencap
+	fi
 
 	# Convert
 	convert $image -define jpeg:extent=$SIZE -scale $SCALE -auto-orient $image
@@ -17,9 +29,12 @@ for image in `ls -r *.{png,jpeg,jpg,JPG} -R 2>/dev/null`; do
 	# Move converted image to thumbnail directory
 	mv $image thumb/
 
+	# Correct file extension
+	full="${image%.*}.$ending"
+
 	# Display message
 	echo "<div class="item">"
-	echo "<a href=\"./full/$image\"><img src=\"./thumb/$image\" alt=\"$image\"></a>"
+	echo -e "\t<a href=\"./full/$full\"><img src=\"./thumb/$image\" alt=\"$full\"></a>"
 	echo "</div>"
 
 done
