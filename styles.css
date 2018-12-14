@@ -72,3 +72,9 @@ h2 {
 	color: #ffffff;
 	background-color: #61a3e9;
 }
+/* Fixes Firefox anomaly during image load */
+@-moz-document url-prefix() {
+	img:-moz-loading {
+		visibility: hidden;
+	}
+}
