@@ -45,17 +45,17 @@ h2 {
 	max-width: 500px;
 }
 .content a {
-	color: #ffffff;
+	color: #000000;
 }
 .content a:hover {
 	text-decoration: underline;
 }
 .navbar {
-	background-color: #719fff !important;
+	background-color: #789fda !important;
 	padding: 1% 5%;
 }
 .navbar a {
-	color: #3f3f3f;
+	color: #000000;
 }
 .navbar a:hover {
 	text-decoration: underline;
