@@ -5,7 +5,6 @@ Redesign of homescreens.org
 Available [here](https://morr.netlify.com)
 
 ## Things to work on
-- WebM integration
 - general design
 
 ## Description
@@ -18,3 +17,6 @@ The grid item tiling is done through [Salvattore](https://salvattore.js.org/)
 
 ### Lazy loading
 Utilized [lazyload](https://github.com/verlok/lazyload)
+
+### Icons
+Utilized [Jam](https://jam-icons.com/). This is to indicate that a thumbnail leads to a webm or gif.

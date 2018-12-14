@@ -75,9 +75,12 @@ img:not([src]) {
 	color: #ffffff;
 	background-color: #61a3e9;
 }
-/* Fixes Firefox anomaly during image load */
-@-moz-document url-prefix() {
-	img:-moz-loading {
-		visibility: hidden;
-	}
+
+.jammin {
+	border-color: black;
+	left: 30px;
+	position: relative;
+	top: 60px;
+	stroke: #3c74ca;
+	stroke-width: 2px;
 }
