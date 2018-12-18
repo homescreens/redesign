@@ -5,6 +5,7 @@
 
 SIZE="500kb"
 SCALE="40%"
+MAX_WIDTH=700
 
 for image in `ls -r *.{gif,jpeg,jpg,JPG,png,webm} -R 2>/dev/null`; do
 
@@ -24,7 +25,7 @@ for image in `ls -r *.{gif,jpeg,jpg,JPG,png,webm} -R 2>/dev/null`; do
 	fi
 
 	# Convert
-	convert $image -define jpeg:extent=$SIZE -scale $SCALE -auto-orient $image
+	convert $image -define jpeg:extent=$SIZE -scale $SCALE -resize $MAX_WIDTH -auto-orient $image
 
 	# Move converted image to thumbnail directory
 	mv $image thumb/
@@ -33,7 +34,7 @@ for image in `ls -r *.{gif,jpeg,jpg,JPG,png,webm} -R 2>/dev/null`; do
 	full="${image%.*}.$ending"
 
 	# Display message
-	echo "<div class="item">"
+	echo "<div class=\"item\">"
 	if [ $ending == "gif" ] || [ $ending == "webm" ];
 	then
 		# Video icon
