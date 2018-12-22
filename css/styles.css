@@ -36,10 +36,10 @@ img:not([src]) {
 	margin-left: 3%;
 }
 #header {
-	background-color: #e1e8ff;
+	background-color: #eef2ff;
 	padding: 1% 5%;
 	margin-bottom: 2%;
-	color: #333333;
+	color: #515151;
 }
 #timeline {
 	margin: 0% 5%;
